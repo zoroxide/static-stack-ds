@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include "stack.h"
 
+Stack stack1;
 
 int main(void) {
-    printf("Hello, World!\n");
+    if(stack_init(&stack1) == R_NOK) {
+        printf("Stack didn't initialized successfully");
+    }
     return 0;
 }
