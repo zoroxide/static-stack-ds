@@ -1,0 +1,3 @@
+D:/Loay Mohamed_Files/Projects/software/c&cpp/untitled/cmake-build-debug/CMakeFiles/untitled.dir
+D:/Loay Mohamed_Files/Projects/software/c&cpp/untitled/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Loay Mohamed_Files/Projects/software/c&cpp/untitled/cmake-build-debug/CMakeFiles/rebuild_cache.dir
