@@ -34,7 +34,7 @@ static stack_status_t stack_empty(const Stack * mystack) {
     }
 }
 
-stack_status_t stack_push(Stack * mystack, const uint32_t value) {
+stack_status_t stack_push(Stack * mystack, const int value) {
     stack_status_t ret;
     if((mystack == NULL) || STACK_FULL == stack_full(mystack)) {
         #ifdef DEBUG
@@ -53,7 +53,7 @@ stack_status_t stack_push(Stack * mystack, const uint32_t value) {
     return ret;
 }
 
-stack_status_t stack_pop(Stack * mystack, uint32_t *value) {
+stack_status_t stack_pop(Stack * mystack, int *value) {
     stack_status_t ret;
     if((mystack == NULL) || (value == NULL) ||STACK_EMPTY == stack_empty(mystack)) {
         #ifdef DEBUG
@@ -71,7 +71,7 @@ stack_status_t stack_pop(Stack * mystack, uint32_t *value) {
 
     return ret;
 }
-stack_status_t stack_top(const Stack * mystack, uint32_t *value) {
+stack_status_t stack_top(const Stack * mystack, int *value) {
     stack_status_t ret;
 
     if((mystack == NULL) || (value == NULL) || (stack_empty(mystack) == STACK_EMPTY)) {
@@ -90,7 +90,7 @@ stack_status_t stack_top(const Stack * mystack, uint32_t *value) {
     return ret;
 }
 
-stack_status_t stack_size(const Stack * mystack, uint32_t *_size) {
+stack_status_t stack_size(const Stack * mystack, int *_size) {
     stack_status_t ret;
 
     if((mystack == NULL) || (_size == NULL)) {
@@ -117,7 +117,7 @@ stack_status_t stack_display(const Stack * mystack) {
                 printf("STACK IS EMPTY OR NULL POINTER DETECTED\n");
         #endif
     }else {
-        for(sint16_t i = mystack->stack_pointer; i>=0; i--) {
+        for(int i = mystack->stack_pointer; i>=0; i--) {
             printf("%i\n", mystack->data[i]);
         }
         ret = ROK;
@@ -131,11 +131,11 @@ stack_status_t stack_display_reverse(const Stack * mystack) {
 
     if((mystack == NULL) || (stack_empty(mystack) == STACK_EMPTY)) {
         ret = R_NOK;
-#ifdef DEBUG
-        printf("STACK IS EMPTY OR NULL POINTER DETECTED\n");
-#endif
+        #ifdef DEBUG
+                printf("STACK IS EMPTY OR NULL POINTER DETECTED\n");
+        #endif
     }else {
-        for(sint16_t i = 0; i<=mystack->stack_pointer; i++) {
+        for(int i = 0; i<=mystack->stack_pointer; i++) {
             printf("%i\n", mystack->data[i]);
         }
         ret = ROK;

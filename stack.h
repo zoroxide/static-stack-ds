@@ -10,8 +10,8 @@
 #define DEBUG
 
 typedef struct stack_ds {
-    uint32_t stack_pointer;
-    uint32_t data[STACK_MAX_SIZE];
+    int stack_pointer;
+    int data[STACK_MAX_SIZE];
 } Stack;
 
 typedef enum stack_statue {
@@ -29,13 +29,13 @@ typedef enum return_statue {
 
 return_statue_t stack_init(Stack * my_stack);
 
-stack_status_t stack_push(Stack * mystack, const uint32_t value);
+stack_status_t stack_push(Stack * mystack, const int value);
 
-stack_status_t stack_pop(Stack * mystack, uint32_t *value);
+stack_status_t stack_pop(Stack * mystack, int *value);
 
-stack_status_t stack_top(const Stack * mystack, uint32_t *value);
+stack_status_t stack_top(const Stack * mystack, int *value);
 
-stack_status_t stack_size(const Stack * mystack, uint32_t *_size);
+stack_status_t stack_size(const Stack * mystack, int *_size);
 
 stack_status_t stack_display(const Stack * mystack);
 
