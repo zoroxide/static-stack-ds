@@ -7,6 +7,7 @@
 #include "std_types.h"
 
 #define STACK_MAX_SIZE 5
+#define DEBUG
 
 typedef struct stack_ds {
     uint32_t stack_pointer;
@@ -22,19 +23,21 @@ typedef enum stack_statue {
 
 return_statue_t stack_init(Stack * my_stack);
 
-static stack_status_t stack_full(const Stack * mystack);
+stack_status_t stack_push(Stack * mystack, const uint32_t value);
 
-static stack_status_t stack_empty(const Stack * mystack);
-
-stack_status_t stack_push(const Stack * mystack, uint32_t value);
-
-stack_status_t stack_pop(const Stack * mystack, uint32_t *value);
+stack_status_t stack_pop(Stack * mystack, uint32_t *value);
 
 stack_status_t stack_top(const Stack * mystack, uint32_t *value);
 
 stack_status_t stack_size(const Stack * mystack, uint32_t *_size);
 
 stack_status_t stack_display(const Stack * mystack);
+
+stack_status_t stack_display_reverse(const Stack * mystack);
+
+static stack_status_t stack_full(const Stack * mystack);
+
+static stack_status_t stack_empty(const Stack * mystack);
 
 
 
