@@ -20,6 +20,12 @@ typedef enum stack_statue {
  STACK_NOT_FULL
 } stack_status_t;
 
+typedef enum return_statue {
+    R_NOK,
+    ROK
+} return_statue_t;
+
+
 
 return_statue_t stack_init(Stack * my_stack);
 
